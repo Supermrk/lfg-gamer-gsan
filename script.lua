@@ -1,19 +1,22 @@
 local sp
+local launcher
+local trigger
+local debris=game:GetService("Debris")
+local bang4
+local pop2
+local fountain
+local bangsounds={160248459,160248479,160248493}
 
 function setup(part)
 	sp = part
+	
+	launcher=sp:WaitForChild("Launcher")
+	trigger=sp:WaitForChild("Trigger")
+
+	bang4=launcher:WaitForChild("Bang4")
+	pop2=launcher:WaitForChild("Pop2")
+	fountain=launcher:WaitForChild("Fountain")
 end
-
-local launcher=sp:WaitForChild("Launcher")
-local trigger=sp:WaitForChild("Trigger")
-local debris=game:GetService("Debris")
-
-local bang4=launcher:WaitForChild("Bang4")
-local pop2=launcher:WaitForChild("Pop2")
-local fountain=launcher:WaitForChild("Fountain")
-
-
-local bangsounds={160248459,160248479,160248493}
 function makerandombang()
 	local bang=Instance.new("Sound")
 	debris:AddItem(bang,10)
