@@ -7,25 +7,6 @@ local pop2
 local fountain
 local bangsounds={160248459,160248479,160248493}
 
-function setup(part)
-	sp = part
-	
-	launcher=sp:WaitForChild("Launcher")
-	trigger=sp:WaitForChild("Trigger")
-
-	bang4=launcher:WaitForChild("Bang4")
-	pop2=launcher:WaitForChild("Pop2")
-	fountain=launcher:WaitForChild("Fountain")
-	
-	trigger.Changed:connect(function()
-	if not debounce then
-		debounce=true
-		delay(0,fireclassic)
-		wait(3)
-		debounce=false
-	end
-end)
-end
 function makerandombang()
 	local bang=Instance.new("Sound")
 	debris:AddItem(bang,10)
@@ -200,4 +181,25 @@ function firedisplay()
 			flare(flare1.Position,(launcher.CFrame*CFrame.Angles((i/5)*math.pi*2,0,0)).lookVector*20,.95,2,colors[clrcount+1])
 		end
 	end
+end
+
+
+function setup(part)
+	sp = part
+	
+	launcher=sp:WaitForChild("Launcher")
+	trigger=sp:WaitForChild("Trigger")
+
+	bang4=launcher:WaitForChild("Bang4")
+	pop2=launcher:WaitForChild("Pop2")
+	fountain=launcher:WaitForChild("Fountain")
+	
+	trigger.Changed:connect(function()
+	if not debounce then
+		debounce=true
+		delay(0,fireclassic)
+		wait(3)
+		debounce=false
+	end
+end)
 end
