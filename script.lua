@@ -16,6 +16,15 @@ function setup(part)
 	bang4=launcher:WaitForChild("Bang4")
 	pop2=launcher:WaitForChild("Pop2")
 	fountain=launcher:WaitForChild("Fountain")
+	
+	trigger.Changed:connect(function()
+	if not debounce then
+		debounce=true
+		delay(0,fireclassic)
+		wait(3)
+		debounce=false
+	end
+end)
 end
 function makerandombang()
 	local bang=Instance.new("Sound")
@@ -192,13 +201,3 @@ function firedisplay()
 		end
 	end
 end
-
-
-trigger.Changed:connect(function()
-	if not debounce then
-		debounce=true
-		delay(0,fireclassic)
-		wait(3)
-		debounce=false
-	end
-end)
