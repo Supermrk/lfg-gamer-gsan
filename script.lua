@@ -10,7 +10,7 @@ local bangsounds={160248459,160248479,160248493}
 function makerandombang()
 	local bang=Instance.new("Sound")
 	debris:AddItem(bang,10)
-	bang.Volume=1
+	bang.Volume=5
 	bang.Pitch=.8+math.random()*.4
 	bang.SoundId="http://www.roblox.com/asset/?id="..bangsounds[math.random(1,3)]
 	return bang
@@ -102,7 +102,7 @@ function fireclassic()
 					local f=flare(flare1.Position,(launcher.CFrame*CFrame.Angles((i/7)*math.pi*2,0,0)).lookVector*20,.95,3,clr)
 					if i==7 then
 						local s=Instance.new("Sound")
-						s.Volume=1
+						s.Volume=5
 						s.SoundId="http://www.roblox.com/asset/?id=160247625"
 						s.Pitch=.5
 						s.Parent=f
@@ -128,6 +128,7 @@ function firefan()
 		local s=Instance.new("Sound")
 		s.Pitch=.5+(math.random()*.1)
 		s.SoundId="http://www.roblox.com/asset/?id=160248604"
+		s.Volume=5
 		s.Parent=f
 		wait()
 		if s then
@@ -143,6 +144,7 @@ function firefan()
 		local s=Instance.new("Sound")
 		s.Pitch=.5+(math.random()*.1)
 		s.SoundId="http://www.roblox.com/asset/?id=160248604"
+		s.Volume=5
 		s.Parent=f
 		wait()
 		if s then
@@ -170,7 +172,7 @@ function firedisplay()
 	local flare1=flare(launcher.Position,Vector3.new(0,100,0),.8,1)
 	local b=Instance.new("Sound")
 	debris:AddItem(b,10)
-	b.Volume=1
+	b.Volume=5
 	b.SoundId="http://www.roblox.com/asset/?id=160248522"
 	b.Parent=flare1
 	wait(1)
